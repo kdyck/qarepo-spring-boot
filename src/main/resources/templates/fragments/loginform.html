@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud | Jumbotron Hero</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div th:fragment="loginForm">
+
+    <form method="POST" th:action="@{/login}" id="loginForm">
+        <div th:if="${error}">
+            Unable to login. Check your username and password.
+        </div>
+        <div class="row">
+            <fieldset>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="email" class="form-control" name="username" id="username"
+                               aria-describedby="emailHelp"
+                               placeholder="Email">
+                        <small id="emailPrivacy" class="form-text text-muted" style="font-size:10px">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="Password">
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-dark" type="submit" value="Login">Sign in</button>
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
